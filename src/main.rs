@@ -22,11 +22,13 @@ fn main() {
     println!("Hello, world!");
     let mut game = Game::new();
     // setup game here
+    let player = game.add_sprite("player", SpritePreset::RacingCarBlack);
+    player.translation = Vec2::new(200.0, 100.0);
     game.add_logic(game_logic);
     game.run(GameState::default());
 }
 
 fn game_logic(engine: &mut Engine, game_state: &mut GameState) {
-    game_state.current_score += 1;
-    println!("Current score: {}", game_state.current_score);
+    // game_state.current_score += 1;
+    // println!("Current score: {}", game_state.current_score);
 }
